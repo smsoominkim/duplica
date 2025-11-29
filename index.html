@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplica - Create Your Digital Self</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        delphi: {
+                            bg: '#FDFBF7',
+                            dark: '#1A1A1A',
+                            accent: '#D9432F', // Reddish orange accent
+                            card: '#F5F2EB'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'card': '0 10px 40px -10px rgba(0,0,0,0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #1A1A1A;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif-display {
+            font-family: 'Newsreader', serif;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(217, 67, 47, 0.15) 0%, rgba(253, 251, 247, 0) 70%);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 4px;
+        }
+        /* Animation utilities */
+        .fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation (Height Reduced) -->
+    <nav class="fixed w-full z-50 bg-[#FDFBF7]/90 backdrop-blur-md border-b border-gray-100/50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer">
+                <span class="font-serif-display font-medium text-xl tracking-tight">Duplica</span>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+                <a href="#" class="hover:text-black transition">Product</a>
+                <a href="#" class="hover:text-black transition">Solutions</a>
+                <a href="#" class="hover:text-black transition">Pricing</a>
+                <a href="#" class="hover:text-black transition">Resources</a>
+            </div>
+
+            <!-- Auth Buttons (Padding Reduced) -->
+            <div class="flex items-center gap-3">
+                <a href="#" class="hidden md:block text-sm font-medium hover:text-black text-gray-600">Log in</a>
+                <a href="#" class="bg-black text-white px-4 py-2 rounded-full text-xs font-medium hover:bg-gray-800 transition shadow-lg shadow-gray-200">
+                    Sign up free
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Padding Reduced) -->
+    <section class="relative pt-28 pb-12 px-6 overflow-hidden">
+        <div class="hero-gradient absolute top-0 left-0 w-full h-full pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10 fade-up">
+            <div class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 mb-6 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                <span class="text-[10px] font-medium text-gray-600 tracking-wide uppercase">Duplica 1.0 is live</span>
+            </div>
+            
+            <!-- Font Size Reduced -->
+            <h1 class="font-serif-display text-4xl md:text-6xl lg:text-7xl leading-[0.95] mb-6 text-gray-900 tracking-tight">
+                Build Your <br> <span class="italic text-gray-800">Digital AI Clone</span>
+            </h1>
+            
+            <p class="text-base md:text-lg text-gray-600 mb-8 max-w-xl mx-auto leading-normal">
+                 Scale your expertise and reach to engage your audience 24/7.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
+                <button class="w-full sm:w-auto px-6 py-3 bg-black text-white rounded-full text-sm font-medium hover:scale-105 transition duration-300 shadow-xl">
+                    Clone yourself
+                </button>
+                <button class="w-full sm:w-auto px-6 py-3 bg-white border border-gray-200 text-gray-900 rounded-full text-sm font-medium hover:bg-gray-50 transition duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-play text-[10px]"></i> Watch Demo
+                </button>
+            </div>
+        </div>
+
+        <!-- Hero Images / Cards (Gap Reduced) -->
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 fade-up delay-200">
+            <!-- Card 1 -->
+            <div class="group relative aspect-[3/4] rounded-xl overflow-hidden shadow-card hover:shadow-2xl transition duration-500">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" alt="Person 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-5">
+                    <span class="text-white font-serif-display text-xl italic">The Executive</span>
+                    <span class="text-white/80 text-xs mt-1">Available for strategy calls 24/7</span>
+                </div>
+            </div>
+            
+            <!-- Card 2 (Center - Elevated) -->
+            <div class="group relative aspect-[3/4] rounded-xl overflow-hidden shadow-card hover:shadow-2xl transition duration-500 md:-mt-8 border-4 border-white">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Person 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-5">
+                    <div class="bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded-lg mb-2">
+                        <div class="flex gap-2 mb-2">
+                            <span class="h-1 w-10 bg-white/60 rounded-full animate-pulse"></span>
+                            <span class="h-1 w-6 bg-white/40 rounded-full"></span>
+                        </div>
+                        <p class="text-white text-[10px] leading-relaxed">"You don’t have to become someone else to be worthy."</p>
+                    </div>
+                    <span class="text-white font-serif-display text-xl italic">The Coach</span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group relative aspect-[3/4] rounded-xl overflow-hidden shadow-card hover:shadow-2xl transition duration-500">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop" alt="Person 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-5">
+                    <span class="text-white font-serif-display text-xl italic">The Creator</span>
+                    <span class="text-white/80 text-xs mt-1">Engaging with 50k fans simultaneously</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof (Padding Reduced) -->
+    <section class="py-8 border-y border-gray-200/60 bg-white/50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-xs text-gray-500 mb-6 font-medium tracking-wider uppercase">Trusted by industry leaders</p>
+            <div class="flex flex-wrap justify-center items-center gap-10 opacity-60 grayscale hover:grayscale-0 transition duration-500 transform scale-90">
+                <i class="fab fa-google text-xl"></i>
+                <i class="fab fa-spotify text-xl"></i>
+                <i class="fab fa-amazon text-xl"></i>
+                <i class="fab fa-meta text-xl"></i>
+                <i class="fab fa-stripe text-xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop Text (Padding Reduced) -->
+    <section class="py-20 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="text-delphi-accent font-medium tracking-wide text-xs uppercase mb-3 block">The Problem</span>
+            <h2 class="font-serif-display text-4xl md:text-5xl text-gray-900 mb-4">Time is scarce. <br> <span class="italic text-gray-400">Value is infinite.</span></h2>
+            <p class="text-base text-gray-600">You only have 24 hours in a day. Your digital self has no limits.</p>
+        </div>
+    </section>
+
+    <!-- Feature 1: Voice/Chat (Padding & Gap Reduced) -->
+    <section class="py-14 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 relative">
+                <!-- UI Mockup: Chat -->
+                <div class="bg-white rounded-2xl shadow-soft border border-gray-100 p-5 max-w-sm mx-auto transform rotate-[-2deg] hover:rotate-0 transition duration-500">
+                    <div class="flex items-center gap-3 mb-4 border-b border-gray-50 pb-3">
+                        <div class="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs">Digital You</div>
+                            <div class="text-[10px] text-green-500 flex items-center gap-1"><span class="w-1 h-1 bg-green-500 rounded-full"></span> Online</div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-gray-100 rounded-xl rounded-tl-none p-3 text-xs text-gray-700 max-w-[90%]">
+                            Hello! I'm your digital twin. I can answer questions about your work.
+                        </div>
+                        <div class="bg-black text-white rounded-xl rounded-tr-none p-3 text-xs max-w-[90%] ml-auto">
+                            Can you summarize your latest book?
+                        </div>
+                        <div class="bg-gray-100 rounded-xl rounded-tl-none p-3 text-xs text-gray-700 max-w-[90%]">
+                            <div class="flex gap-1 mb-1">
+                                <span class="w-0.5 h-0.5 bg-gray-400 rounded-full animate-bounce"></span>
+                                <span class="w-0.5 h-0.5 bg-gray-400 rounded-full animate-bounce delay-100"></span>
+                                <span class="w-0.5 h-0.5 bg-gray-400 rounded-full animate-bounce delay-200"></span>
+                            </div>
+                            Certainly! In Chapter 1, I discuss...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="w-10 h-10 bg-delphi-card rounded-lg flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-message text-lg text-gray-700"></i>
+                </div>
+                <h3 class="font-serif-display text-3xl md:text-4xl mb-4">Clone your <br><span class="italic text-gray-500">Tone & Voice</span></h3>
+                <p class="text-gray-600 text-base leading-normal mb-6">
+                    Upload your podcasts, videos, and text. Delphi learns how you speak, your mannerisms, and your unique personality to create a clone that truly sounds like you.
+                </p>
+                <a href="#" class="text-black text-sm font-medium border-b border-black pb-0.5 hover:text-delphi-accent hover:border-delphi-accent transition">Learn more about cloning</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 2: Knowledge Graph (Padding Reduced) -->
+    <section class="py-14 px-6 bg-[#F5F2EB]/50 rounded-[2.5rem] my-10 max-w-[98%] mx-auto">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm">
+                    <i class="fa-solid fa-brain text-lg text-gray-700"></i>
+                </div>
+                <h3 class="font-serif-display text-3xl md:text-4xl mb-4">Your Mind, <br><span class="italic text-gray-500">Digitized</span></h3>
+                <p class="text-gray-600 text-base leading-normal mb-6">
+                    Connect Notion, YouTube, PDFs, and websites. Delphi builds a dynamic knowledge graph so your clone knows everything you know, instantly.
+                </p>
+                
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-white border border-gray-200 rounded-md text-xs flex items-center gap-2"><i class="fa-brands fa-youtube text-red-500"></i> YouTube</span>
+                    <span class="px-3 py-1 bg-white border border-gray-200 rounded-md text-xs flex items-center gap-2"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF</span>
+                    <span class="px-3 py-1 bg-white border border-gray-200 rounded-md text-xs flex items-center gap-2"><i class="fa-brands fa-spotify text-green-500"></i> Spotify</span>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center">
+                <!-- Visualization: Knowledge Graph -->
+                <div class="relative w-full max-w-sm aspect-square">
+                    <!-- Central Node -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full shadow-lg z-20 flex items-center justify-center border-4 border-gray-50">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200" class="w-16 h-16 rounded-full object-cover">
+                    </div>
+                    
+                    <!-- Orbital Nodes -->
+                    <div class="absolute top-4 left-1/2 w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-red-500 z-10 animate-bounce delay-100">
+                        <i class="fa-brands fa-youtube text-xl"></i>
+                    </div>
+                    <div class="absolute bottom-8 left-8 w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-blue-500 z-10 animate-pulse">
+                        <i class="fa-brands fa-wordpress text-xl"></i>
+                    </div>
+                    <div class="absolute bottom-8 right-8 w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-gray-700 z-10">
+                        <i class="fa-brands fa-medium text-xl"></i>
+                    </div>
+                    
+                    <!-- Connection Lines (SVG) -->
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none z-0 stroke-gray-300" stroke-width="2" fill="none">
+                        <path d="M190 190 L190 60" stroke-dasharray="4,4"/>
+                        <path d="M170 210 L80 300" stroke-dasharray="4,4"/>
+                        <path d="M210 210 L300 300" stroke-dasharray="4,4"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 3: Phone/Voice Call (Padding Reduced) -->
+    <section class="py-14 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <!-- UI Mockup: Phone Call -->
+                <div class="bg-gray-900 rounded-[2rem] p-3 max-w-[280px] mx-auto shadow-xl border-4 border-gray-800">
+                    <div class="bg-gray-800 rounded-[1.5rem] h-[420px] flex flex-col items-center pt-8 relative overflow-hidden">
+                        <div class="absolute top-0 w-full h-24 bg-gradient-to-b from-black/50 to-transparent"></div>
+                        <div class="w-20 h-20 rounded-full border-4 border-white/10 mb-3 overflow-hidden">
+                             <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-white text-lg font-medium mb-1">Sarah's AI</h4>
+                        <p class="text-gray-400 text-xs mb-8">04:23</p>
+                        
+                        <!-- Audio Waveform -->
+                        <div class="flex items-center gap-1 h-10 mb-8">
+                            <div class="w-1 bg-delphi-accent h-3 rounded-full animate-[pulse_1s_ease-in-out_infinite]"></div>
+                            <div class="w-1 bg-delphi-accent h-6 rounded-full animate-[pulse_1.2s_ease-in-out_infinite]"></div>
+                            <div class="w-1 bg-delphi-accent h-4 rounded-full animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                            <div class="w-1 bg-delphi-accent h-8 rounded-full animate-[pulse_1.5s_ease-in-out_infinite]"></div>
+                            <div class="w-1 bg-delphi-accent h-4 rounded-full animate-[pulse_1.1s_ease-in-out_infinite]"></div>
+                        </div>
+
+                        <div class="flex gap-5 mt-auto mb-8">
+                            <button class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-md">
+                                <i class="fa-solid fa-microphone-slash text-sm"></i>
+                            </button>
+                            <button class="w-12 h-12 rounded-full bg-red-500 flex items-center justify-center text-white shadow-lg shadow-red-500/30">
+                                <i class="fa-solid fa-phone-slash text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="w-10 h-10 bg-delphi-card rounded-lg flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-phone text-lg text-gray-700"></i>
+                </div>
+                <h3 class="font-serif-display text-3xl md:text-4xl mb-4">They can call <br><span class="italic text-gray-500">You (Your AI)</span></h3>
+                <p class="text-gray-600 text-base leading-normal mb-6">
+                    Enable 1-on-1 voice calls. Your audience can have full, natural conversations with your digital self, just like a real phone call.
+                </p>
+                <div class="flex items-center gap-4 text-sm font-medium text-gray-800">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Low Latency</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Human-like Voice</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monetization Section (Padding Reduced) -->
+    <section class="py-16 px-6 bg-black text-white rounded-[2.5rem] my-8 max-w-[98%] mx-auto overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gray-900 to-transparent pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="pl-0 md:pl-8">
+                <span class="text-delphi-accent font-medium tracking-wide text-xs uppercase mb-3 block">Monetize</span>
+                <h3 class="font-serif-display text-3xl md:text-5xl mb-5">Make money <br><span class="italic text-gray-400">while you sleep</span></h3>
+                <p class="text-gray-400 text-base leading-normal mb-6">
+                    Set a price per minute or per message. Turn your knowledge into a passive revenue stream that scales infinitely.
+                </p>
+                <button class="bg-white text-black px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-200 transition">Start Earning</button>
+            </div>
+
+            <!-- Dashboard Mockup -->
+            <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 shadow-2xl">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <p class="text-gray-400 text-xs">Total Revenue</p>
+                        <h4 class="text-2xl font-medium">$12,450.00</h4>
+                    </div>
+                    <div class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-[10px] font-medium">+14% this week</div>
+                </div>
+                
+                <!-- Simple Graph Bar -->
+                <div class="flex items-end gap-2 h-24 mb-5">
+                    <div class="flex-1 bg-gray-800 rounded-t-sm h-[40%]"></div>
+                    <div class="flex-1 bg-gray-800 rounded-t-sm h-[60%]"></div>
+                    <div class="flex-1 bg-gray-800 rounded-t-sm h-[30%]"></div>
+                    <div class="flex-1 bg-gray-800 rounded-t-sm h-[70%]"></div>
+                    <div class="flex-1 bg-gray-800 rounded-t-sm h-[50%]"></div>
+                    <div class="flex-1 bg-gray-800 rounded-t-sm h-[80%]"></div>
+                    <div class="flex-1 bg-white rounded-t-sm h-[95%] shadow-[0_0_15px_rgba(255,255,255,0.5)]"></div>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-800">
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 rounded-full bg-gray-700"></div>
+                            <span class="text-xs">Call with Jason</span>
+                        </div>
+                        <span class="text-xs text-green-400">+$150.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Padding Reduced) -->
+    <footer class="pt-12 pb-8 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+            <div class="col-span-2 md:col-span-2">
+                <span class="font-serif-display font-medium text-xl tracking-tight block mb-4">Duplica</span>
+                <p class="text-gray-500 text-xs max-w-xs leading-normal">
+                    The world's leading platform for digital cloning. Clone your expertise, not just your likeness.
+                </p>
+            </div>
+            
+            <div>
+                <h5 class="font-bold text-xs mb-3">Product</h5>
+                <ul class="space-y-1.5 text-xs text-gray-600">
+                    <li><a href="#" class="hover:text-black">Features</a></li>
+                    <li><a href="#" class="hover:text-black">Pricing</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5 class="font-bold text-xs mb-3">Company</h5>
+                <ul class="space-y-1.5 text-xs text-gray-600">
+                    <li><a href="#" class="hover:text-black">About</a></li>
+                    <li><a href="#" class="hover:text-black">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5 class="font-bold text-xs mb-3">Social</h5>
+                <ul class="space-y-1.5 text-xs text-gray-600">
+                    <li><a href="#" class="hover:text-black">Twitter</a></li>
+                    <li><a href="#" class="hover:text-black">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center pt-6 border-t border-gray-100">
+            <p class="text-[10px] text-gray-400">© 2024 Duplica Labs, Inc. All rights reserved.</p>
+            <div class="flex gap-4 mt-3 md:mt-0">
+                <a href="#" class="text-[10px] text-gray-400 hover:text-black">Privacy Policy</a>
+                <a href="#" class="text-[10px] text-gray-400 hover:text-black">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
