@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duplica - Create Your Digital Self</title>
+    <title>Duplika - Create Your Digital Self</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,6 +74,15 @@
                 transform: translateY(0);
             }
         }
+        
+        /* Floating Animation for new section */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
@@ -83,7 +92,7 @@
         <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
             <!-- Logo -->
             <div class="flex items-center gap-2 cursor-pointer">
-                <span class="font-serif-display font-medium text-xl tracking-tight">Duplica</span>
+                <span class="font-serif-display font-medium text-xl tracking-tight">Duplika</span>
             </div>
 
             <!-- Desktop Links -->
@@ -111,7 +120,7 @@
         <div class="max-w-4xl mx-auto text-center relative z-10 fade-up">
             <div class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 mb-6 shadow-sm">
                 <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                <span class="text-[10px] font-medium text-gray-600 tracking-wide uppercase">Duplica 1.0 is live</span>
+                <span class="text-[10px] font-medium text-gray-600 tracking-wide uppercase">Duplika 1.0 is live</span>
             </div>
             
             <!-- Font Size Reduced -->
@@ -143,7 +152,7 @@
                     <span class="text-white/80 text-xs mt-1">Available for strategy calls 24/7</span>
                     <!-- Link Updated: Icon added, color changed to delphi-accent -->
                     <a href="#" class="text-delphi-accent text-[10px] font-medium mt-2 block tracking-wide hover:text-white transition-colors">
-                        <i class="fa-solid fa-link mr-1"></i> duplica.me/ExecutiveLee
+                        <i class="fa-solid fa-link mr-1"></i> duplika.me/ExecutiveLee
                     </a>
                 </div>
             </div>
@@ -162,7 +171,7 @@
                     <span class="text-white font-serif-display text-xl italic">The Mindfulness Coach</span>
                     <!-- Link Updated: Icon added, color changed to delphi-accent -->
                     <a href="#" class="text-delphi-accent text-[10px] font-medium mt-1 block tracking-wide hover:text-white transition-colors">
-                        <i class="fa-solid fa-link mr-1"></i> duplica.me/LifeCoachMia
+                        <i class="fa-solid fa-link mr-1"></i> duplika.me/LifeCoachMia
                     </a>
                 </div>
             </div>
@@ -175,7 +184,7 @@
                     <span class="text-white/80 text-xs mt-1">Engaging with 50k fans simultaneously</span>
                     <!-- Link Updated: Icon added, color changed to delphi-accent -->
                     <a href="#" class="text-delphi-accent text-[10px] font-medium mt-2 block tracking-wide hover:text-white transition-colors">
-                        <i class="fa-solid fa-link mr-1"></i> duplica.me/DirectorK
+                        <i class="fa-solid fa-link mr-1"></i> duplika.me/DirectorK
                     </a>
                 </div>
             </div>
@@ -219,7 +228,7 @@
                             <div class="font-bold text-xs">Executive Lee</div>
                             <div class="text-[10px] text-green-500 flex items-center gap-1"><span class="w-1 h-1 bg-green-500 rounded-full"></span> Online</div>
                             <a href="#" class="text-delphi-accent text-[10px] font-medium block mt-0.5 hover:underline">
-                                <i class="fa-solid fa-link mr-1"></i> duplica.me/ExecutiveLee
+                                <i class="fa-solid fa-link mr-1"></i> duplika.me/ExecutiveLee
                             </a>
                         </div>
                     </div>
@@ -248,6 +257,9 @@
     <!-- Bot -->
     <div class="bg-gray-100 rounded-xl rounded-tl-none p-3 text-xs text-gray-700 max-w-[90%]">
         First, I recommend exit interviews and a short satisfaction survey.
+        <div class="mt-3 flex gap-2">
+            <span class="text-[10px] bg-white border px-2 py-1 rounded text-gray-400">Source: Podcast Ep #42</span>
+        </div>
     </div>
 
     <!-- Bot Typing Effect -->
@@ -275,64 +287,82 @@
         </div>
     </section>
 
-    <!-- Feature 2: Knowledge Graph (Padding Reduced) -->
-    <section class="py-14 px-6 bg-[#F5F2EB]/50 rounded-[2.5rem] my-10 max-w-[98%] mx-auto">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm">
-                    <i class="fa-solid fa-brain text-lg text-gray-700"></i>
-                </div>
-                <h3 class="font-serif-display text-3xl md:text-4xl mb-4">Your Mind, <br><span class="italic text-gray-500">Digitized</span></h3>
-                <p class="text-gray-600 text-base leading-normal mb-6">
-                    Connect Gmail, Notion, YouTube, PDFs, and websites. Delphi builds a dynamic knowledge graph so your clone knows everything you know, instantly.
-                </p>
+    <!-- Section: Clone Thinking (Visual Flow) - Merged with original container padding/rounding -->
+    <section class="py-14 px-6 bg-[#F2ECE6] rounded-[2.5rem] my-10 max-w-[98%] mx-auto relative overflow-hidden">
+         <!-- Decorative elements -->
+         <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-gray-400 rounded-full"></div>
+             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-gray-400 rounded-full"></div>
+         </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                 <!-- Updated Text Color -->
+                 <span class="text-xs font-bold tracking-widest text-delphi-accent uppercase mb-4 block">Knowledge Base</span>
+                <h2 class="text-4xl md:text-5xl font-serif-display mb-6">Clone Your Best Thinking.</h2>
+                <p class="text-gray-600 max-w-xl mx-auto">Upload files, connect YouTube, or sync your Notion. Duplika synthesizes your digital footprint into a coherent mind.</p>
+            </div>
+
+            <!-- Integration Visual -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0">
                 
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="px-3 py-1 bg-white border border-gray-200 rounded-md text-xs flex items-center gap-2"><i class="fa-solid fa-envelope text-red-500"></i> Gmail</span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 rounded-md text-xs flex items-center gap-2"><i class="fa-brands fa-youtube text-red-500"></i> YouTube</span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 rounded-md text-xs flex items-center gap-2"><i class="fa-regular fa-file-pdf text-red-400"></i> PDF</span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 rounded-md text-xs flex items-center gap-2"><i class="fa-brands fa-instagram text-pink-600"></i> Instagram</span>
+                <!-- Inputs -->
+                <div class="flex flex-row md:flex-col gap-4 animate-float" style="animation-delay: 0s;">
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center gap-3 w-48">
+                        <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-500"><i class="fab fa-youtube"></i></div>
+                        <span class="text-sm font-medium">YouTube</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center gap-3 w-48 ml-4 md:ml-8">
+                        <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-500"><i class="fas fa-file-pdf"></i></div>
+                        <span class="text-sm font-medium">PDFs</span>
+                    </div>
+                     <!-- Updated to Instagram -->
+                     <div class="bg-white p-4 rounded-xl shadow-md flex items-center gap-3 w-48">
+                        <div class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center text-pink-600"><i class="fab fa-instagram"></i></div>
+                        <span class="text-sm font-medium">Instagram</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="relative flex justify-center">
-                <!-- Visualization: Knowledge Graph -->
-                <div class="relative w-full max-w-sm aspect-square">
-                    <!-- Central Node -->
-                    <!-- Center (190, 190) is maintained for 380x380 viewBox -->
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full shadow-lg z-20 flex items-center justify-center border-4 border-gray-50">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200" class="w-16 h-16 rounded-full object-cover">
-                    </div>
-                    
-                    <!-- Orbital Nodes -->
-                    <!-- Positions updated to match exact endpoints of SVG lines -->
-                    <!-- Top (YouTube): (190, 50) => top: 13.16%, left: 50% -->
-                    <div class="absolute top-[13.16%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-red-500 z-10">
-                        <i class="fa-brands fa-youtube text-xl"></i>
-                    </div>
-                    <!-- Left (Gmail): (80, 300) => top: 78.95%, left: 21.05% -->
-                    <div class="absolute top-[78.95%] left-[21.05%] transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-red-500 z-10">
-                        <i class="fa-solid fa-envelope text-xl"></i>
-                    </div>
-                    <!-- Right (Instagram): (300, 300) => top: 78.95%, left: 78.95% -->
-                    <div class="absolute top-[78.95%] left-[78.95%] transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-pink-600 z-10">
-                        <i class="fa-brands fa-instagram text-xl"></i>
-                    </div>
-                    
-                    <!-- Connection Lines (SVG) -->
-                    <!-- viewBox 0 0 380 380. Center is 190, 190. -->
-                    <svg class="absolute inset-0 w-full h-full pointer-events-none z-0 stroke-gray-300" stroke-width="2" fill="none" viewBox="0 0 380 380" preserveAspectRatio="xMidYMid meet">
-                        <!-- Center to Top (190, 50) -->
-                        <path d="M190 190 L190 50" stroke-dasharray="4,4"/>
-                        <!-- Center to Left (80, 300) -->
-                        <path d="M190 190 L80 300" stroke-dasharray="4,4"/>
-                        <!-- Center to Right (300, 300) -->
-                        <path d="M190 190 L300 300" stroke-dasharray="4,4"/>
-                    </svg>
+
+                <!-- Connectors (Desktop) -->
+                <div class="hidden md:flex w-32 h-[1px] bg-gray-300 relative">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-400 rounded-full"></div>
                 </div>
+
+                <!-- The Brain / Core -->
+                <div class="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                     <div class="absolute inset-0 bg-[#D95D39]/10 rounded-full animate-pulse"></div>
+                     <div class="absolute inset-4 bg-[#D95D39]/20 rounded-full blur-xl"></div>
+                     <div class="w-full h-full rounded-full border-2 border-white bg-gradient-to-br from-[#D95D39] to-[#8C3A24] flex items-center justify-center overflow-hidden shadow-2xl relative z-10">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover opacity-80 mix-blend-overlay">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-fingerprint text-white text-5xl opacity-80"></i>
+                        </div>
+                     </div>
+                </div>
+
+                <!-- Connectors (Desktop) -->
+                <div class="hidden md:flex w-32 h-[1px] bg-gray-300 relative">
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-400 rounded-full"></div>
+                </div>
+
+                <!-- Output -->
+                <div class="flex flex-row md:flex-col gap-4 animate-float md:items-end" style="animation-delay: 1s;">
+                     <div class="bg-white p-4 rounded-xl shadow-md flex items-center gap-3 w-52">
+                        <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-white"><i class="fas fa-comment"></i></div>
+                        <span class="text-sm font-medium">1:1 Chat</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center gap-3 w-52 mr-4 md:mr-8">
+                        <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600"><i class="fab fa-slack"></i></div>
+                        <span class="text-sm font-medium">Slack Bot</span>
+                    </div>
+                     <div class="bg-white p-4 rounded-xl shadow-md flex items-center gap-3 w-52">
+                        <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-500"><i class="fas fa-globe"></i></div>
+                        <span class="text-sm font-medium">Website Embed</span>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Feature 3: Direct Link & Chat (Padding Reduced) -->
     <section class="py-14 px-6">
@@ -393,7 +423,7 @@
                 </div>
                 <h3 class="font-serif-display text-3xl md:text-4xl mb-4">Direct Link. <br><span class="italic text-gray-500">Instant Connection.</span></h3>
                 <p class="text-gray-600 text-base leading-normal mb-6">
-                    Share your unique duplica.me link on your Instagram bio or any platform. When followers click, they're instantly connected to your AI for a 1-on-1 chat.
+                    Share your unique duplika.me link on your Instagram bio or any platform. When followers click, they're instantly connected to your AI for a 1-on-1 chat.
                 </p>
                 <div class="flex flex-col gap-3 text-sm font-medium text-gray-800">
                     <span class="flex items-center gap-2"><i class="fa-solid fa-link text-delphi-accent"></i> Seamless Integration in Bio</span>
@@ -456,7 +486,7 @@
     <footer class="pt-12 pb-8 border-t border-gray-200">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
             <div class="col-span-2 md:col-span-2">
-                <span class="font-serif-display font-medium text-xl tracking-tight block mb-4">Duplica</span>
+                <span class="font-serif-display font-medium text-xl tracking-tight block mb-4">Duplika</span>
                 <p class="text-gray-500 text-xs max-w-xs leading-normal">
                     The world's leading platform for digital cloning. Clone your expertise, not just your likeness.
                 </p>
@@ -488,7 +518,7 @@
         </div>
         
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center pt-6 border-t border-gray-100">
-            <p class="text-[10px] text-gray-400">© 2024 Duplica Labs, Inc. All rights reserved.</p>
+            <p class="text-[10px] text-gray-400">© 2025 Duplika Labs, Inc. All rights reserved.</p>
             <div class="flex gap-4 mt-3 md:mt-0">
                 <a href="#" class="text-[10px] text-gray-400 hover:text-black">Privacy Policy</a>
                 <a href="#" class="text-[10px] text-gray-400 hover:text-black">Terms</a>
